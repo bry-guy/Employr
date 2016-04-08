@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Resume.Views.ContactView"
+             Title="Connect">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+      </Style>
+      <Style Class="Header" TargetType="Label">
+        <Setter Property="FontSize" Value="36" />
+      </Style>
+      <Style Class="Icon" TargetType="Image">
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="60" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <RelativeLayout>
+    <Image x:Name="ContactBackground"
+           Source=""
+           Opacity=".85"
+           Aspect="AspectFill"
+           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" />
+    <Grid Padding="20,20,20,40" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Label  x:Name="ContactLabel" Grid.Row="0" StyleClass="Header" Text="Contact Me" HorizontalTextAlignment="Center" />
+      <Label x:Name="ContactBlurb" Grid.Row="1"  Text="{Binding ContactBlurb}" FontSize="12" HorizontalTextAlignment="Start" VerticalOptions="Center" />
+      <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Start" Padding="20,0,20,0" Spacing="20" >
+        <Image  x:Name="TwitterWhiteLogo" Source="twitter_white.png" StyleClass="Icon">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding TwitterUri}" />
+          </Image.GestureRecognizers>
+        </Image>
+        <Label x:Name="TwitterText" Text="@BJSmith91" HorizontalOptions="Start" />
+      </StackLayout>
+      <StackLayout Grid.Row="3" Orientation="Horizontal" VerticalOptions="Start" Padding="20,0,20,0" Spacing="20" >
+        <Image  x:Name="LinkedinWhiteLogo" Source="linkedin_white.png" StyleClass="Icon">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding LinkedinUri}" />
+        </Image.GestureRecognizers>
+        </Image>
+        <Label x:Name="LinkedinText" Text="Connect on LinkedIn" />
+      </StackLayout>
+      <StackLayout Grid.Row="4" Orientation="Horizontal" VerticalOptions="Start" Padding="20,0,20,0" Spacing="20" >
+        <Image  x:Name="GmailLogo" Source="email.png" StyleClass="Icon">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding EmailUri}" />
+        </Image.GestureRecognizers>
+        </Image>
+        <Label x:Name="GmailText" Text="BryanJ.Smith91@gmail.com" />
+      </StackLayout>
+      <StackLayout Grid.Row="5" Orientation="Horizontal" VerticalOptions="Start" Padding="20,0,20,0" Spacing="20" >
+        <Image  x:Name="GithubLogo" Source="github_white.png" StyleClass="Icon">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding GithubUri}" />
+        </Image.GestureRecognizers>
+        </Image>
+        <Label x:Name="GithubText" Text="github.com/bryansmi" />
+      </StackLayout>
+    </Grid>
+  </RelativeLayout>
+</ContentPage>

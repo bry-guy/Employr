@@ -11,10 +11,14 @@ namespace Resume.ViewModels
 {
     public class HomeViewModel
     {
-        public string Description { get; set; } = "Lorem ipsum dolor sit amet, atqui voluptatum pro no, dignissim persequeris ei sit. Nihil dicant commune cum an, postulant necessitatibus ea eum. Vis probo efficiantur an. Eu sea mucius virtute oportere. " +
-            "@Iriure deserunt consetetur ut mea.Dicant mentitum conclusionemque ad sea, alii equidem vix id.Per quando ubique dictas ne, prima movet ceteros ne ius.Ad veritus rationibus ius, mea id nihil legendos urbanitas, " +
-            "@et duo antiopam salutatus. Vocent facilisis efficiantur eos te, an quaestio consectetuer comprehensam qui, vis nihil dicam homero ex.Eos ea cetero patrioque signiferumque, facer audiam et mel.";
-        public string Title { get; set; } = "Mobile App Developer";
+        public string Description { get; set; } =
+            @"Hi! I'm Bryan. I'm 25 years old with a Bachelor's Degree in Civil Engineering from the University of Michigan, and I am a " +
+            "Xamarin Certified Mobile Developer. I'm looking to work full time as a Mobile Developer starting as soon as possible, either remotely or based in Seattle, Washington. " +
+            "\n\nI've created Employr to help demonstrate my skills, work ethic, and passion for Mobile Development. Outside of the professional world, I cook (sometimes poorly) and tinker on personal projects " +
+            "(one of which you're looking at right now!). Thanks for downloading Employr, and I hope to see you around Xamarin Evolve, 2016!"
+                .Replace("\n", Environment.NewLine);
+
+        public string Title { get; set; } = "Mobile Developer";
 
         public Command HireButtonPressedCommand { get; set; }
 

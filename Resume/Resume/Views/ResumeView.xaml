@@ -3,21 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resume="clr-namespace:Resume;assembly=Resume"
              x:Class="Resume.Views.ResumeView"
-             Title="Resume">
-  <Grid>
+             Title="Highlights">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="#F6F6F6" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+      </Style>
+    </ResourceDictionary>
+    </ContentPage.Resources>
+  <Grid BackgroundColor="#BDBDBD">
     <Grid.RowDefinitions>
       <RowDefinition Height="4*" />
       <RowDefinition Height="6*" />
     </Grid.RowDefinitions>
-    <Image x:Name="ResumeBackground" Grid.Row="0" Source="keyboard_blurred_sample.jpg" Opacity="1" Aspect="AspectFill"/>
-    <StackLayout Padding="20,20,20,20" Grid.Row="1">
-      <Label Text="{Binding HighlightsBlurb}" Grid.Row="0" TextColor="Gray" Margin="20,20,20,20"/>
-      <resume:FlatButton 
-        x:Name="ResumeButton" 
-        Text="Download Resume" 
-        Clicked="HandleResumeClicked" 
-        VerticalOptions="EndAndExpand" 
-        TextColor="White" 
+    <Image x:Name="ResumeBackground" Grid.Row="0" Source="evolve_2.jpg" Opacity="1" Aspect="AspectFill"/>
+    <StackLayout Grid.Row="1">
+      <Label Text="{Binding HighlightsTitle1}" Margin="15,0,15,0"/>
+      <Label Text="{Binding HighlightsBlurb1}" Margin="15,0,15,0"/>
+      <Label Text="{Binding HighlightsTitle2}" Margin="15,0,15,0"/>
+      <Label Text="{Binding HighlightsBlur2}" Margin="15,0,15,0"/>
+      <resume:FlatButton
+        x:Name="ResumeButton"
+        Text="Download Resume"
+        Clicked="HandleResumeClicked"
+        VerticalOptions="EndAndExpand"
+        TextColor="#F6F6F6"
         BackgroundColor="#00BCD2"
         BorderRadius="0"/>
     </StackLayout>

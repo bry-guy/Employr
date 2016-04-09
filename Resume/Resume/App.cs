@@ -7,19 +7,17 @@ using Xamarin.Forms;
 using Resume.Views;
 
 //views
-//todo: implement label styles
 //todo: investigate moving styles to separate file
-//todo: find good background images
-//todo: investigate if multiple sizes are needed
-//todo: update styles/colors to look good with backgrounds
+//todo: update background image to adjust for dpi
 //todo: create unique animations for each page
 
 //models
-//todo: cleanup calculator visuals quickly
+//todo: prevent rotation on iOS and Android
 //todo: add side scrollbar
 //todo: add calculator to scrollbar
 //todo: finish android app
 //todo: test android app against wide range of devices
+//todo: cleanup calculator visuals quickly
 //todo: tweak/fix for iOS
 //todo: test iOS app
 

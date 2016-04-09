@@ -9,9 +9,17 @@ namespace Resume.ViewModels
 {
     public class ResumeViewModel
     {
-        public string HighlightsBlurb { get; set; } = "Lorem ipsum dolor sit amet, atqui voluptatum pro no, dignissim persequeris ei sit. Nihil dicant commune cum an, postulant necessitatibus ea eum. Vis probo efficiantur an. Eu sea mucius virtute oportere. " +
-            "@Iriure deserunt consetetur ut mea.Dicant mentitum conclusionemque ad sea, alii equidem vix id.Per quando ubique dictas ne, prima movet ceteros ne ius.Ad veritus rationibus ius, mea id nihil legendos urbanitas, " +
-            "@et duo antiopam salutatus. Vocent facilisis efficiantur eos te, an quaestio consectetuer comprehensam qui, vis nihil dicam homero ex.Eos ea cetero patrioque signiferumque, facer audiam et mel.";
-        
+        public string HighlightsTitle1 { get; set; } = "Mobile Developer";
+        public string HighlightsBlurb1 { get; set; } = @"
+ •2022 testing this bullet
+ •2022 testing this bullet as well
+ •2022 lets also test this one";
+
+        public string HighlightsTitle2 { get; set; } = "Engineer";
+        public string HighlightsBlurb2 { get; set; } = @"
+
+ •2022 testing more bullets
+ •2022 continuing the test
+ •2022 hello i am computer";
     }
 }

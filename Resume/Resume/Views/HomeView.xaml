@@ -2,32 +2,54 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:resume="clr-namespace:Resume;assembly=Resume"
              x:Class="Resume.Views.HomeView"
              Title ="Biography">
-  <RelativeLayout>
-    <Image x:Name="HomeBackground" 
-           Source="" 
-           Opacity=".85" 
-           Aspect="AspectFill"
-           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" 
-           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" />
-    <Grid x:Name="grid" Padding="0,20,0,0" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*" />
-        <RowDefinition Height="3*" />
-      </Grid.RowDefinitions>
-      <controls:CircleImage
-        Grid.Row="0"
-        Grid.Column="0"
-        x:Name="BryanImage"
-        Source="http://i0.kym-cdn.com/entries/icons/facebook/000/006/026/futuramafry.jpg" >
-      </controls:CircleImage>
-      <StackLayout Grid.Row="1" Grid.Column="0" Padding="15,0,15,0" Spacing="10">
-        <Label x:Name="BryanName" Text="Bryan Smith" FontSize="36" HorizontalTextAlignment="Center" TextColor="Silver" />
-        <Label x:Name="BryanTitle" Text="{Binding Title}" FontSize="24" HorizontalTextAlignment="Center" TextColor="Silver" />
-        <Label x:Name="BryanDescription" Text="{Binding Description}" FontSize="12" TextColor="Silver" />
-        <Button x:Name="HireButton" Text ="Hire me!" VerticalOptions="CenterAndExpand" Command="{Binding HireButtonPressedCommand}" TextColor="Silver" />
-      </StackLayout>
-    </Grid>
-  </RelativeLayout>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="#F6F6F6" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <Grid x:Name="grid" BackgroundColor="#BDBDBD">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="5*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="6*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Image x:Name="HomeBackground" Source="evolve_1.jpg" Aspect="AspectFill" Grid.ColumnSpan="6" Grid.RowSpan="2" />
+    <controls:CircleImage
+      Grid.Row="1"
+      Grid.RowSpan="2"
+      Grid.Column="3"
+      Grid.ColumnSpan="2"
+      x:Name="BryanImage" 
+      Source="http://i0.kym-cdn.com/entries/icons/facebook/000/006/026/futuramafry.jpg" 
+      Margin="0,0,0,0"
+      HorizontalOptions="EndAndExpand"/>
+    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Spacing="5">
+      <Label x:Name="BryanName" Text="Bryan Smith" FontSize="36" HorizontalTextAlignment="Center" Margin="15,0,15,0"/>
+      <Label x:Name="BryanDescription" Text="{Binding Description}" Margin="15,0,15,0"/>
+      <resume:FlatButton 
+        x:Name="HireButton" 
+        Text ="Hire me!" 
+        VerticalOptions="EndAndExpand"
+        Command="{Binding HireButtonPressedCommand}" 
+        TextColor="#F6F6F6" 
+        BackgroundColor="#00BCD2" 
+        BorderRadius="0" />
+    </StackLayout>
+  </Grid>
 </ContentPage>

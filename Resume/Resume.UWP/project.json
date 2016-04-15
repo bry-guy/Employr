@@ -3,7 +3,7 @@
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "Xam.Plugins.Forms.ImageCircle": "1.4.1",
     "Xam.Plugins.Messaging": "3.2.1",
-    "Xamarin.Forms": "2.2.0.4-pre1"
+    "Xamarin.Forms": "2.2.0.5-pre2"
   },
   "frameworks": {
     "uap10.0": {}

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Resume.ViewModels;
+using Resume;
 
 //todo: implement rotate and crossfade animation
 //todo: implement expand and overlay fade animation
@@ -24,7 +25,8 @@ namespace Resume.Views
             BindingContext = new HomeViewModel();
             InitializeComponent();
 
-            //AnimationUtilities.InitializeAnimations(BryanImage, BryanName, BryanTitle, BryanDescription, HireButton);
+            AnimationUtilities.InitializeAnimations(BryanImage, BryanName, BryanDescription, HireButton);
+            BryanImageLarge.Opacity = 0;
 
             ImageFlipCommand = new Command(HandleImagePressed);
             BryanImage.GestureRecognizers.Add(new TapGestureRecognizer
@@ -33,17 +35,17 @@ namespace Resume.Views
             });
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    if (!appeared)
-        //    {
-        //        AnimationUtilities.FeatherIn(BryanImage, BryanName, BryanTitle, BryanDescription, HireButton);
-        //        appeared = true;
-        //    }
-            
-        //}
-        
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (!appeared)
+            {
+                AnimationUtilities.FeatherIn(BryanImage, BryanName, BryanDescription, HireButton);
+                appeared = true;
+            }
+
+        }
+
         private void HandleImagePressed()
         {
            FlipImage(BryanImage, imageIndex);
@@ -55,11 +57,7 @@ namespace Resume.Views
             switch (index)
             {
                 case 0:
-                    await elem.RotateTo(360, 250);
-                    BryanImage.Opacity = 0;
-                    //todo: implement BryanImage2
-                    //BryanImage2.Opacity = 1; 
-                    BryanImage.Source = "http://filmgarb.com/wp-content/uploads/tv-futurama-1999_-philip_j_fry-billy_west-tops-s07e03-fry_red_jacket.jpg";
+                    await BryanImageLarge.FadeTo(1);
                     imageIndex++;
                     break;
                 case 1:

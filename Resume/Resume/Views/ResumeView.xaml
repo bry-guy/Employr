@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:resume="clr-namespace:Resume;assembly=Resume"
              x:Class="Resume.Views.ResumeView"
              Title="Highlights">
@@ -15,15 +16,36 @@
     </ContentPage.Resources>
   <Grid BackgroundColor="#BDBDBD">
     <Grid.RowDefinitions>
-      <RowDefinition Height="4*" />
-      <RowDefinition Height="6*" />
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="5*" />
     </Grid.RowDefinitions>
-    <Image x:Name="ResumeBackground" Grid.Row="0" Source="evolve_2.jpg" Opacity="1" Aspect="AspectFill"/>
-    <StackLayout Grid.Row="1">
-      <Label Text="{Binding HighlightsTitle1}" Margin="15,0,15,0"/>
-      <Label Text="{Binding HighlightsBlurb1}" Margin="15,0,15,0"/>
-      <Label Text="{Binding HighlightsTitle2}" Margin="15,0,15,0"/>
-      <Label Text="{Binding HighlightsBlur2}" Margin="15,0,15,0"/>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="6*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Image x:Name="ResumeBackground" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_2.jpg" Aspect="AspectFill"/>
+    <controls:CircleImage
+      Grid.Row="1"
+      Grid.RowSpan="2"
+      Grid.Column="3"
+      Grid.ColumnSpan="2"
+      x:Name="MenuImage"
+      Source="menu_white_48dp"
+      FillColor="#00BCD2"
+      HorizontalOptions="EndAndExpand"/>
+    <!--May need to update column definitions to center this properly -->
+    
+    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6">
+      <Label x:Name="HighlightsTitle1" Text="{Binding HighlightsTitle1}" Margin="15,0,15,0"/>
+      <Label x:Name="HighlightsBlurb1" Text="{Binding HighlightsBlurb1}" Margin="15,0,15,0"/>
+      <Label x:Name="HighlightsTitle2" Text="{Binding HighlightsTitle2}" Margin="15,0,15,0"/>
+      <Label x:Name="HighlightsBlurb2" Text="{Binding HighlightsBlurb2}" Margin="15,0,15,0"/>
       <resume:FlatButton
         x:Name="ResumeButton"
         Text="Download Resume"

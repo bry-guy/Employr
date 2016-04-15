@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:resume="clr-namespace:Resume;assembly=Resume"
              x:Class="Resume.Views.ContactView"
              Title="Connect">
   <ContentPage.Resources>
@@ -18,13 +20,32 @@
   </ContentPage.Resources>
   <Grid BackgroundColor="#BDBDBD">
     <Grid.RowDefinitions>
-      <RowDefinition Height="4*" />
-      <RowDefinition Height="6*" />
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="5*" />
     </Grid.RowDefinitions>
-    <Image x:Name="ContactBackground" Grid.Row="0" Source="evolve_3.jpg" Aspect="AspectFill"/>
-    <Label x:Name="ContactBlurb" Grid.Row="0"  Text="{Binding ContactBlurb}" VerticalOptions="Center" Margin="15,90,15,0"/>
-    <StackLayout Grid.Row="1" Spacing="10" Padding="20,10,20,40">
-      <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="6*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Image x:Name="ContactBackground" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_3.jpg" Aspect="AspectFill"/>
+    <controls:CircleImage
+      Grid.Row="1"
+      Grid.RowSpan="2"
+      Grid.Column="3"
+      Grid.ColumnSpan="2"
+      x:Name="MenuImage"
+      Source="menu_white_48dp"
+      FillColor="#00BCD2"
+      HorizontalOptions="EndAndExpand"/>
+    <!--May need to update column definitions to center this properly -->
+    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Spacing="20" Padding="20,10,20,40">
+      <StackLayout Grid.ColumnSpan="6" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
         <Image  x:Name="TwitterWhiteLogo" Source="twitter_white.png" StyleClass="Icon">
           <Image.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding TwitterUri}" />
@@ -32,7 +53,7 @@
         </Image>
         <Label x:Name="TwitterText" Text="@BJSmith91" HorizontalOptions="Start" />
       </StackLayout>
-      <StackLayout Grid.Row="3" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+      <StackLayout Grid.ColumnSpan="6" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
         <Image  x:Name="LinkedinWhiteLogo" Source="linkedin_white.png" StyleClass="Icon">
           <Image.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding LinkedinUri}" />
@@ -40,7 +61,7 @@
         </Image>
         <Label x:Name="LinkedinText" Text="Connect on LinkedIn" />
       </StackLayout>
-      <StackLayout Grid.Row="4" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+      <StackLayout Grid.ColumnSpan="6" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
         <Image  x:Name="GmailLogo" Source="email.png" StyleClass="Icon">
           <Image.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding EmailUri}" />
@@ -48,7 +69,7 @@
         </Image>
         <Label x:Name="GmailText" Text="BryanJ.Smith91@gmail.com" />
       </StackLayout>
-      <StackLayout Grid.Row="5" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+      <StackLayout Grid.ColumnSpan="6" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
         <Image  x:Name="GithubLogo" Source="github_white.png" StyleClass="Icon">
           <Image.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding GithubUri}" />

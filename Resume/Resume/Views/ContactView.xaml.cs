@@ -18,21 +18,21 @@ namespace Resume.Views
             BindingContext = new ContactViewModel();
             InitializeComponent();
 
-            //AnimationUtilities.InitializeAnimations(ContactLabel, TwitterWhiteLogo, TwitterText, 
-            //    LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
+            AnimationUtilities.InitializeAnimations(TwitterWhiteLogo, TwitterText, 
+                LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    if (!_appeared)
-        //    {
-        //        AnimationUtilities.FeatherIn(ContactLabel, TwitterWhiteLogo, TwitterText,
-        //        LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
-        //        _appeared = true;
-        //    }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (!_appeared)
+            {
+                AnimationUtilities.FeatherIn(TwitterWhiteLogo, TwitterText,
+                LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
+                _appeared = true;
+            }
 
-        //}
+        }
 
         //private async void FlipImage(VisualElement elem, int index)
         //{
@@ -52,16 +52,6 @@ namespace Resume.Views
         //            imageIndex++;
         //            break;
         //    }
-        //}
-
-        //private void AddTapToConnect(Image elem, Uri uri, Command command) //add uri paramater
-        //{
-        //    ConnectThroughService = new Command(HandleImagePressed);
-        //    elem.GestureRecognizers.Add(new TapGestureRecognizer
-        //    {
-        //        Command = ConnectThroughService,
-        //        CommandParameter = uri,
-        //    });
         //}
 
     }

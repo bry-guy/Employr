@@ -17,9 +17,6 @@ namespace Resume.ViewModels
         public Uri LinkedinUri { get; set; }
         public Uri EmailUri { get; set; }
         public Uri GithubUri { get; set; }
-
-        public string ContactBlurb { get; set; } =
-            "Stay in touch at Evolve 2016. ";
            
         public ContactViewModel()
         {

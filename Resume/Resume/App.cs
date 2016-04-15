@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Resume.Views;
 
 //views
+//todo: add gesture recognizers for text on contact page
 //todo: investigate moving styles to separate file
 //todo: update background image to adjust for dpi
 //todo: create unique animations for each page

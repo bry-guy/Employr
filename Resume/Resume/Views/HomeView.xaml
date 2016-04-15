@@ -14,6 +14,7 @@
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
+  
   <Grid x:Name="grid" BackgroundColor="#BDBDBD">
     <Grid.RowDefinitions>
       <RowDefinition Height="3*" />
@@ -29,7 +30,9 @@
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
-    <Image x:Name="HomeBackground" Source="evolve_1.jpg" Aspect="AspectFill" Grid.ColumnSpan="6" Grid.RowSpan="2" />
+    
+    <Image x:Name="HomeBackground" Grid.ColumnSpan="6" Grid.RowSpan="2" Source="evolve_1.jpg" Aspect="AspectFill" />
+    
     <controls:CircleImage
       Grid.Row="1"
       Grid.RowSpan="2"
@@ -37,11 +40,21 @@
       Grid.ColumnSpan="2"
       x:Name="BryanImage" 
       Source="http://i0.kym-cdn.com/entries/icons/facebook/000/006/026/futuramafry.jpg" 
-      Margin="0,0,0,0"
-      HorizontalOptions="EndAndExpand"/>
+      HorizontalOptions="EndAndExpand" />
+    <!--May need to update column definitions to center this properly -->
+    
+    <controls:CircleImage
+      Grid.Row="0"
+      Grid.RowSpan="1"
+      Grid.Column="0"
+      Grid.ColumnSpan="2"
+      x:Name="BryanImageLarge" 
+      Source="https://i.ytimg.com/vi/8QfSzgV1q5g/maxresdefault.jpg" 
+      HorizontalOptions="EndAndExpand" />
+    
     <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Spacing="5">
-      <Label x:Name="BryanName" Text="Bryan Smith" FontSize="36" HorizontalTextAlignment="Center" Margin="15,0,15,0"/>
-      <Label x:Name="BryanDescription" Text="{Binding Description}" Margin="15,0,15,0"/>
+      <Label x:Name="BryanName" Text="Bryan Smith" FontSize="36" Margin ="15,0,15,0" />
+      <Label x:Name="BryanDescription" Text="{Binding Description}" Margin ="15,0,15,0" />
       <resume:FlatButton 
         x:Name="HireButton" 
         Text ="Hire me!" 
@@ -51,5 +64,6 @@
         BackgroundColor="#00BCD2" 
         BorderRadius="0" />
     </StackLayout>
+    
   </Grid>
 </ContentPage>

@@ -16,30 +16,35 @@ namespace Resume.Views
     public partial class ResumeView : ContentPage
     {
 
-        public bool appeared = false;
+        private bool _appeared = false;
 
         public ResumeView()
         {
             BindingContext = new ResumeViewModel();
             InitializeComponent();
 
-            AnimationUtilities.InitializeAnimations(HighlightsTitle1, HighlightsBlurb1, HighlightsTitle2, HighlightsBlurb2);
-        }
-
-        public void HandleResumeClicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CustomWebView());
+            AnimationUtilities.InitializeAppear(HighlightsTitle1, HighlightsBlurb1, HighlightsTitle2, HighlightsBlurb2);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (!appeared)
+            if (!_appeared)
             {
                 AnimationUtilities.FeatherIn(HighlightsTitle1, HighlightsBlurb1, HighlightsTitle2, HighlightsBlurb2);
-                appeared = true;
+                _appeared = true;
             }
 
+        }
+
+        public void HandleResumeButtonPressed(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CustomWebView());
+        }
+
+        public void HandleCodeSwitchPressed(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CodeView());
         }
     }
 }

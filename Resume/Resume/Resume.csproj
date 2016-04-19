@@ -11,7 +11,7 @@
     <RootNamespace>Resume</RootNamespace>
     <AssemblyName>Resume</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <NuGetPackageImportStamp>
@@ -35,10 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ActionButton.cs" />
     <Compile Include="AnimationUtilities.cs" />
     <Compile Include="App.cs" />
     <Compile Include="CustomWebView.cs" />
     <Compile Include="FlatButton.cs" />
+    <Compile Include="Views\CodeView.xaml.cs">
+      <DependentUpon>CodeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ContactView.xaml.cs">
       <DependentUpon>ContactView.xaml</DependentUpon>
     </Compile>
@@ -106,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\CustomWebView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CodeView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

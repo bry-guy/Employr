@@ -18,7 +18,7 @@ namespace Resume.Views
             BindingContext = new ContactViewModel();
             InitializeComponent();
 
-            AnimationUtilities.InitializeAnimations(TwitterWhiteLogo, TwitterText, 
+            AnimationUtilities.InitializeAppear(TwitterWhiteLogo, TwitterText, 
                 LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
         }
 
@@ -34,25 +34,10 @@ namespace Resume.Views
 
         }
 
-        //private async void FlipImage(VisualElement elem, int index)
-        //{
-        //    switch (index)
-        //    {
-        //        case 0:
-        //            await elem.RotateTo(360, 250);
-        //            BryanImage.Source = "http://filmgarb.com/wp-content/uploads/tv-futurama-1999_-philip_j_fry-billy_west-tops-s07e03-fry_red_jacket.jpg";
-        //            imageIndex++;
-        //            break;
-        //        case 1:
-        //            //insert code preview page
-        //            imageIndex++;
-        //            break;
-        //        case 2:
-        //            //insert actual embedded editor app
-        //            imageIndex++;
-        //            break;
-        //    }
-        //}
+        public void HandleCodeSwitchPressed(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CodeView());
+        }
 
     }
 }

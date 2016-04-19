@@ -15,7 +15,7 @@ using Resume.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(CustomWebView), typeof(CustomWebViewRenderer))]
+
 namespace Resume.Droid
 {
     class CustomWebViewRenderer : WebViewRenderer

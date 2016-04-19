@@ -1,17 +1,23 @@
 ﻿using System;
-
+using System.Net;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Provider;
 using ImageCircle.Forms.Plugin.Droid;
 using Resume;
+using Resume.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(FlatButton), typeof(ButtonRenderer))]
+[assembly: ExportRenderer(typeof(ActionButton), typeof(ActionButtonRenderer))]
+[assembly: ExportRenderer(typeof(Xamarin.Forms.ScrollView), typeof(MyScrollViewRenderer))]
+[assembly: ExportRenderer(typeof(CustomWebView), typeof(CustomWebViewRenderer))]
+[assembly: ResolutionGroupName("Employr")]
 
 namespace Resume.Droid
 {
@@ -27,6 +33,19 @@ namespace Resume.Droid
             Forms.Init(this, bundle);
             ImageCircleRenderer.Init();
             LoadApplication(new App());
+        }
+    }
+
+    public class MyScrollViewRenderer : ScrollViewRenderer
+    {
+        protected override void OnElementChanged(VisualElementChangedEventArgs e)
+        {
+            base.OnElementChanged(e);
+
+            if (e.OldElement == null)
+            {
+                OverScrollMode = OverScrollMode.Never;
+            }
         }
     }
 }

@@ -13,6 +13,9 @@ namespace Resume.Views
         public CodeView()
         {
             InitializeComponent();
+            HtmlWebViewSource htmlSource = new HtmlWebViewSource();
+            htmlSource.Html = @"<html>  <body style='padding:0; margin:0;'> <img src='http://i.imgur.com/Bk2z4UB.jpg' width='100%' style='padding:0; margin:0;'/> </body> </html>";
+            _sourceCodeWebsite.Source = htmlSource;
         }
     }
 }

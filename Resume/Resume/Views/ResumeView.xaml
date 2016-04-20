@@ -69,7 +69,7 @@
           Margin ="60, 10, 60, 10"
           VerticalOptions="End"
           HorizontalOptions="Fill"
-          Command="{Binding HandleResumeButtonPressed}"
+          Clicked="HandleResumeButtonPressed"
           TextColor="#F6F6F6"
           BackgroundColor="#00BCD2" >
         <Button.FontFamily>

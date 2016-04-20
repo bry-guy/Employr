@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace Resume.Views
 {
-    public partial class ContactView : ContentPage
+    public partial class ContactView : ContentPage, IIntroAnimation
     {
         private bool _appeared = false;
 
@@ -22,22 +22,19 @@ namespace Resume.Views
                 LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
         }
 
-        protected override void OnAppearing()
+        public void HandleCodeSwitchPressed(object sender, EventArgs e)
         {
-            base.OnAppearing();
+            Navigation.PushAsync(new CodeView());
+        }
+
+        public void RunIntroAnimations()
+        {
             if (!_appeared)
             {
                 AnimationUtilities.FeatherIn(TwitterWhiteLogo, TwitterText,
                 LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
                 _appeared = true;
             }
-
         }
-
-        public void HandleCodeSwitchPressed(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CodeView());
-        }
-
     }
 }

@@ -27,7 +27,7 @@ namespace Resume
 
         public static async void FeatherIn(params VisualElement[] elem)
         {
-            await Task.Delay(1000);
+            await Task.Delay(750);
             for (int index = 0; index < elem.Length; index++)
             {
                 var e = elem[index];

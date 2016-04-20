@@ -40,6 +40,7 @@
     <Compile Include="App.cs" />
     <Compile Include="CustomWebView.cs" />
     <Compile Include="FlatButton.cs" />
+    <Compile Include="IIntroAnimation.cs" />
     <Compile Include="Views\CodeView.xaml.cs">
       <DependentUpon>CodeView.xaml</DependentUpon>
     </Compile>

@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
 using Resume.Views;
 
-//views
-//todo: add gesture recognizers for text on contact page
-//todo: investigate moving styles to separate file
-//todo: update background image to adjust for dpi
-//todo: create unique animations for each page
-
 //models
-//todo: prevent rotation on iOS and Android
-//todo: add side scrollbar
-//todo: add calculator to scrollbar
+//todo: setup website and make business cards
+//todo: enable zoom in webview
+//todo: hide strings away in files
+//todo: cleanup XAML and code files
+//todo: finalize images (leave hosted on imgur? size differences?)
 //todo: finish android app
 //todo: test android app against wide range of devices
-//todo: cleanup calculator visuals quickly
+//todo: prevent rotation on iOS
 //todo: tweak/fix for iOS
 //todo: test iOS app
 
@@ -30,10 +28,23 @@ namespace Resume
         {
             var tabPage = new TabbedPage {Title = "Employr", };
             var navPage = new NavigationPage(tabPage);
+            tabPage.PropertyChanged += TabPageOnPropertyChanged;
             tabPage.Children.Add(new HomeView());
             tabPage.Children.Add(new ResumeView());
             tabPage.Children.Add(new ContactView());
             MainPage = navPage;
+        }
+
+        private void TabPageOnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            var tabPage = (TabbedPage)sender;
+
+            if (e.PropertyName.Equals("CurrentPage"))
+            {
+                var myPage = (IIntroAnimation) tabPage.CurrentPage;
+                myPage.RunIntroAnimations();
+            }
+
         }
 
         protected override void OnStart()

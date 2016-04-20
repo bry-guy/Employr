@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Resume.Views.CodeView">
-  <ScrollView>
-    <Image Source="code.png"  HorizontalOptions="CenterAndExpand" Aspect="AspectFill"/>
-  </ScrollView>
+  <ContentPage.Content>
+    <WebView x:Name="_sourceCodeWebsite"/>
+  </ContentPage.Content>
 </ContentPage>

@@ -11,17 +11,13 @@ using Xamarin.Forms;
 using Resume.ViewModels;
 using Resume;
 
-//todo: implement rotate and crossfade animation
-//todo: implement expand and overlay fade animation
-
 namespace Resume.Views
 {
-    public partial class HomeView : ContentPage
+    public partial class HomeView : ContentPage, IIntroAnimation
     {
         private int imageIndex = 0;
         private bool appeared = false;
         private bool showCode = false;
-        private Command ImageFlipCommand { get; set; }
 
         public HomeView()
         {
@@ -42,22 +38,10 @@ namespace Resume.Views
             _nameStack.SetBinding(HeightRequestProperty, new Binding("Height", source: _circleImage));
             
         }
-        
-        //reset scrolls to unscrolled state to start in OnAppearing()
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (!appeared)
-            {
-                AnimationUtilities.FeatherIn(_nameLabel, _descriptionLabel, _hireButton);
-                await Task.Delay(1000);
-                AnimationUtilities.RollIn(_bryanImage);
-                appeared = true;
-            }
-        }
 
         private void OnScrolled(object sender, ScrolledEventArgs e)
         {
+            
             //scale FAB 
             var imageHeight = _backgroundImage.Height; 
             var startY = _circleImage.Y;
@@ -76,21 +60,46 @@ namespace Resume.Views
 
             stackMotion = Math.Max(-e.ScrollY, -stackTravelDistance);
             _nameStack.TranslationY = stackMotion;
-            
+
+            if (stackMotion == 0)
+            {
+                _nameStack.BackgroundColor = Color.FromHex("#A5A5A5");
+                _bryanImage.Opacity = 1;
+                return;
+            } 
+
             var progressStack = Math.Max(1 + fadeOffset + (stackMotion / stackTravelDistance) / 2, .5);
             var color = _nameStack.BackgroundColor;
             Color newColor = new Color(color.R, color.G, color.B, progressStack);
             _nameStack.BackgroundColor = newColor;
 
-            //roll off _bryanImage
-            _bryanImage.TranslationX = -stackMotion*2;
-            _bryanImage.Rotation = -stackMotion;
-            _bryanImage.Scale = 1+(stackMotion/stackTravelDistance);
+            //fade out _bryanImage
+            _bryanImage.Opacity = 1+(stackMotion/stackTravelDistance)*2;
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            OnScrolled(this, new ScrolledEventArgs(0,0));
         }
 
         private void _circleImage_OnClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CodeView());
+        }
+
+        //reset scrolls to unscrolled state to start
+        public async void RunIntroAnimations()
+        {
+            if (!appeared)
+            {
+                AnimationUtilities.FeatherIn(_nameLabel, _descriptionLabel, _hireButton);
+                await Task.Delay(1000);
+                AnimationUtilities.RollIn(_bryanImage);
+                appeared = true;
+                return;
+            }
         }
     }
 

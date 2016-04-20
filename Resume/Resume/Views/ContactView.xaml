@@ -13,6 +13,10 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
       </Style>
+      <Style TargetType="BoxView">
+        <Setter Property="Color" Value="#999999" />
+        <Setter Property="HeightRequest" Value="1" />
+      </Style>
       <Style Class="Icon" TargetType="Image">
         <Setter Property="HeightRequest" Value="60" />
         <Setter Property="WidthRequest" Value="60" />
@@ -47,52 +51,53 @@
       FillColor="#00BCD2"
       HorizontalOptions="EndAndExpand"/>
     
-    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Padding="20,0,20,40" Spacing="10">
-      <BoxView HeightRequest="1" Color="#999999" />
+    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Padding="20,0,20,0" Spacing="10">
       
-      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+      <BoxView />
+      
+      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding TwitterUri}" />
+        </StackLayout.GestureRecognizers>
         <Image  x:Name="TwitterWhiteLogo" Source="twitter_white.png" StyleClass="Icon">
-          <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding TwitterUri}" />
-          </Image.GestureRecognizers>
         </Image>
         <Label x:Name="TwitterText" Text="@BJSmith91" HorizontalOptions="Start" />
       </StackLayout>
       
-      <BoxView HeightRequest="1" Color="#999999" />
+      <BoxView />
       
-      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding LinkedinUri}" />
+        </StackLayout.GestureRecognizers>
         <Image  x:Name="LinkedinWhiteLogo" Source="linkedin_white.png" StyleClass="Icon">
-          <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding LinkedinUri}" />
-          </Image.GestureRecognizers>
         </Image>
         <Label x:Name="LinkedinText" Text="Connect on LinkedIn" />
       </StackLayout>
 
-      <BoxView HeightRequest="1" Color="#999999" />
+      <BoxView />
 
-      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding EmailUri}" />
+        </StackLayout.GestureRecognizers>
         <Image  x:Name="GmailLogo" Source="email.png" StyleClass="Icon">
-          <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding EmailUri}" />
-          </Image.GestureRecognizers>
         </Image>
         <Label x:Name="GmailText" Text="BryanJ.Smith91@gmail.com" />
       </StackLayout>
 
-      <BoxView HeightRequest="1" Color="#999999" />
+      <BoxView />
 
-      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" >
+      <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="20" MinimumHeightRequest="0" >
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding GithubUri}" />
+        </StackLayout.GestureRecognizers>
         <Image  x:Name="GithubLogo" Source="github_white.png" StyleClass="Icon">
-          <Image.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding GithubUri}" />
-          </Image.GestureRecognizers>
         </Image>
         <Label x:Name="GithubText" Text="github.com/bryansmi" />
       </StackLayout>
 
-      <BoxView HeightRequest="1" Color="#999999" />
+      <BoxView VerticalOptions="End" />
       
     </StackLayout>
 
@@ -107,6 +112,6 @@
         VerticalOptions="Center"/>
 
 
-    <BoxView Grid.Row="3" Grid.ColumnSpan="6" HeightRequest="1" Color="#999999" VerticalOptions="End" />
+    <BoxView Grid.Row="3" Grid.ColumnSpan="6" VerticalOptions="End" />
   </Grid>
 </ContentPage>

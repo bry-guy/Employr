@@ -7,13 +7,9 @@ using System.Threading.Tasks;
 using Resume.ViewModels;
 using Xamarin.Forms;
 
-
-//todo: refactor name
-//todo: move logic for button to viewmodel using events
-
 namespace Resume.Views
 {
-    public partial class ResumeView : ContentPage
+    public partial class ResumeView : ContentPage, IIntroAnimation
     {
 
         private bool _appeared = false;
@@ -26,17 +22,6 @@ namespace Resume.Views
             AnimationUtilities.InitializeAppear(HighlightsTitle1, HighlightsBlurb1, HighlightsTitle2, HighlightsBlurb2);
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (!_appeared)
-            {
-                AnimationUtilities.FeatherIn(HighlightsTitle1, HighlightsBlurb1, HighlightsTitle2, HighlightsBlurb2);
-                _appeared = true;
-            }
-
-        }
-
         public void HandleResumeButtonPressed(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CustomWebView());
@@ -45,6 +30,15 @@ namespace Resume.Views
         public void HandleCodeSwitchPressed(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CodeView());
+        }
+
+        public void RunIntroAnimations()
+        {
+            if (!_appeared)
+            {
+                AnimationUtilities.FeatherIn(HighlightsTitle1, HighlightsBlurb1, HighlightsTitle2, HighlightsBlurb2);
+                _appeared = true;
+            }
         }
     }
 }

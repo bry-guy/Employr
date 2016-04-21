@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Net;
 using Android.App;
 using Android.Content.PM;
@@ -16,6 +17,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(FlatButton), typeof(ButtonRenderer))]
 [assembly: ExportRenderer(typeof(ActionButton), typeof(ActionButtonRenderer))]
 [assembly: ExportRenderer(typeof(Xamarin.Forms.ScrollView), typeof(MyScrollViewRenderer))]
+[assembly: ExportRenderer(typeof(Xamarin.Forms.Label), typeof(MyLabelRenderer))]
 [assembly: ExportRenderer(typeof(CustomWebView), typeof(CustomWebViewRenderer))]
 [assembly: ResolutionGroupName("Employr")]
 
@@ -33,6 +35,22 @@ namespace Resume.Droid
             Forms.Init(this, bundle);
             ImageCircleRenderer.Init();
             LoadApplication(new App());
+        }
+    }
+
+    public class MyLabelRenderer : LabelRenderer
+    {
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+            if(e.PropertyName == Label.LineBreakModeProperty.PropertyName)
+                Control.SetMaxLines(1000);
+        }
+
+        protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
+        {
+            base.OnElementChanged(e);
+            Control.SetMaxLines(1000);
         }
     }
 

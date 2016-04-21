@@ -44,12 +44,6 @@ namespace Resume.Droid
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            //Element = xam forms element
-            //Control = whatever passed to SetNativeControl
-            //Special methods aviailabe on element that are available on renderers
-            
-            //((IButtonController)Element).SendClicked();
-
             Element.InvokeSendClicked();
         }
     }

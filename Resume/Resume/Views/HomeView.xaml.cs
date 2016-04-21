@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,17 +24,17 @@ namespace Resume.Views
             BindingContext = new HomeViewModel();
             InitializeComponent();
 
-            AnimationUtilities.InitializeAppear(_nameLabel, _descriptionLabel, _hireButton);
+            AnimationUtilities.InitializeAppear(_nameLabel, _introductionLabel, _bodyLabel, _hireButton);
             AnimationUtilities.IniitializeRollIn(_bryanImage);
 
             _scrollView.SetBinding(View.MarginProperty, new Binding("Height", source: _nameStack, converter: new ThicknessConverter(),
                 converterParameter: 1, mode: BindingMode.OneWay));
+
             _descriptionStack.SetBinding(View.MarginProperty, new Binding("Height", source: _backgroundImage, converter: new ThicknessConverter(),
                 converterParameter: 1, mode: BindingMode.OneWay));
             _descriptionStack.SetBinding(Xamarin.Forms.Layout.PaddingProperty, new Binding("Height", source: _backgroundImage, converter: new ThicknessConverter(),
                 converterParameter: 3, mode: BindingMode.OneWay));
-
-            _nameStack.SetBinding(HeightRequestProperty, new Binding("Height", source: _circleImage));
+            _nameStack.SetBinding(HeightRequestProperty, new Binding("Height", source: _codeViewFAB));
             
         }
 
@@ -44,18 +43,25 @@ namespace Resume.Views
             
             //scale FAB 
             var imageHeight = _backgroundImage.Height; 
-            var startY = _circleImage.Y;
+            var startY = _codeViewFAB.Y;
             double imageMotion;
 
             imageMotion = Math.Max(-e.ScrollY*(startY/imageHeight), -startY);
-            _circleImage.TranslationY = imageMotion;
+            _codeViewFAB.TranslationY = imageMotion;
 
-            var progressImage = -imageMotion / startY;
-            _circleImage.Scale = 1 - .2*progressImage;
+            if (startY == 0)
+            {
+                _codeViewFAB.Scale = 1;
+            }
+            else
+            {
+                var progressImage = -imageMotion / startY;
+                _codeViewFAB.Scale = 1 - .2 * progressImage;
+            }
 
             //scale and fade _nameStack
             var stackTravelDistance = _nameStack.Y;
-            var fadeOffset = _circleImage.Height/(2*stackTravelDistance);
+            var fadeOffset = _codeViewFAB.Height/(2*stackTravelDistance);
             double stackMotion;
 
             stackMotion = Math.Max(-e.ScrollY, -stackTravelDistance);
@@ -80,57 +86,24 @@ namespace Resume.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-
             OnScrolled(this, new ScrolledEventArgs(0,0));
+            _scrollView.ScrollToAsync(0, 0, false);
         }
 
-        private void _circleImage_OnClicked(object sender, EventArgs e)
+        private void HandleCodeViewButtonPressed(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CodeView());
         }
-
-        //reset scrolls to unscrolled state to start
+        
         public async void RunIntroAnimations()
         {
             if (!appeared)
             {
-                AnimationUtilities.FeatherIn(_nameLabel, _descriptionLabel, _hireButton);
+                AnimationUtilities.FeatherIn(_nameLabel, _introductionLabel, _bodyLabel, _hireButton);
                 await Task.Delay(1000);
                 AnimationUtilities.RollIn(_bryanImage);
                 appeared = true;
-                return;
             }
-        }
-    }
-
-    public class ThicknessConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            int index = 0;
-            double val = (double) value;
-
-            if (parameter != null)
-                index = (int) parameter;
-
-            switch (index)
-            {
-                case 0:
-                    return new Thickness(val,0,0,0);
-                case 1:
-                    return new Thickness(0, val, 0, 0);
-                case 2:
-                    return new Thickness(0, 0, val, 0);
-                case 3:
-                    return new Thickness(0, 0, 0, val);
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
         }
     }
 }

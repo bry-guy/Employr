@@ -13,10 +13,17 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
       </Style>
+      <Style TargetType="BoxView">
+        <Setter Property="Color" Value="#999999" />
+        <Setter Property="HeightRequest" Value="1" />
+      </Style>
+      <Style TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="#A5A5A5" />
+      </Style>
     </ResourceDictionary>
     </ContentPage.Resources>
   
-  <Grid x:Name="_grid" BackgroundColor="#A5A5A5" RowSpacing="0">
+  <Grid BackgroundColor="#A5A5A5" RowSpacing="0">
     <Grid.RowDefinitions>
       <RowDefinition Height="3*" />
       <RowDefinition Height="*" />
@@ -32,24 +39,50 @@
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
     
-    <Image x:Name="ResumeBackground" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_2.jpg" Aspect="AspectFill"/>
+    <Image x:Name="_backgroundImage" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_2.jpg" Aspect="AspectFill"/>
     
-    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6">
-      <BoxView HeightRequest="1" Color="#999999" VerticalOptions="Start" />
-      <Label x:Name="HighlightsTitle1" Text="{Binding HighlightsTitle1}" FontSize="24" Margin="15,0,15,0" />
-      <Label x:Name="HighlightsBlurb1" Text="{Binding HighlightsBlurb1}" Margin="15,0,15,0"/>
-      <BoxView HeightRequest="1" Color="#999999" />
-      <Label x:Name="HighlightsTitle2" Text="{Binding HighlightsTitle2}" FontSize="24" Margin="15,0,15,0"/>
-      <Label x:Name="HighlightsBlurb2" Text="{Binding HighlightsBlurb2}" Margin="15,0,15,0"/>
+    <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled" IsClippedToBounds="False">
+      <StackLayout x:Name="_highlightsStack" Spacing="0">
+        <Label x:Name="HighlightsTitle1" Text="{Binding HighlightsTitle1}" FontSize="24" Margin="20,0,20,0" />
+        <Label x:Name="HighlightsBlurb1A" Text="{Binding HighlightsBlurb1A}" Margin="20,0,20,0"  />
+        <Label x:Name="HighlightsBlurb1B" Text="{Binding HighlightsBlurb1B}" Margin="20,0,20,0"  />
+        <Label x:Name="HighlightsBlurb1C" Text="{Binding HighlightsBlurb1C}" Margin="20,0,20,0"  />
+        <Label x:Name="HighlightsBlurb1D" Text="{Binding HighlightsBlurb1D}" Margin="20,0,20,0"  />
+        <BoxView VerticalOptions="Fill"/>
+        <Label x:Name="HighlightsTitle2" Text="{Binding HighlightsTitle2}" FontSize="24" Margin="20,0,20,0" />
+        <Label x:Name="HighlightsBlurb2A" Text="{Binding HighlightsBlurb2A}" Margin="20,0,20,0" />
+        <Label x:Name="HighlightsBlurb2B" Text="{Binding HighlightsBlurb2B}" Margin="20,0,20,0" />
+        <Label x:Name="HighlightsBlurb2C" Text="{Binding HighlightsBlurb2C}" Margin="20,0,20,0" />
+        <Label x:Name="HighlightsBlurb2D" Text="{Binding HighlightsBlurb2D}" Margin="20,0,20,0" />
+      </StackLayout>
+    </ScrollView>
+
+    <StackLayout
+      x:Name="_nameStack"
+      Grid.Row="2"
+      Grid.RowSpan="2"
+      Grid.ColumnSpan="6"
+      VerticalOptions="Start"
+      Spacing="0">
+      <BoxView />
+      <Label
+        x:Name="_nameLabel"
+        Text="Who I Am"
+        FontSize="30"
+        VerticalOptions="CenterAndExpand"
+        Margin="20,0,20,0"
+        MinimumHeightRequest="0" >
+      </Label>
+      <BoxView VerticalOptions="End"/>
     </StackLayout>
 
     <resume:ActionButton
+        x:Name="_resumeViewFAB"
         Grid.Row="1"
         Grid.RowSpan="2"
         Grid.Column="3"
         Grid.ColumnSpan="2"
-        x:Name="_circleImage"
-        Clicked="HandleCodeSwitchPressed"
+        Clicked="HandleCodeViewButtonPressed"
         HorizontalOptions="Center"
         VerticalOptions="Center"/>
 
@@ -60,9 +93,8 @@
     BackgroundColor="#BBA0A0A0"
     VerticalOptions="End"
     Spacing="0">
-      <BoxView HeightRequest="1" Color="#999999" />
+      <BoxView />
       <Button
-          x:Name="_resumeButton"
           Text ="Download Resume"
           Font="Bold"
           FontSize="14"
@@ -72,15 +104,9 @@
           Clicked="HandleResumeButtonPressed"
           TextColor="#F6F6F6"
           BackgroundColor="#00BCD2" >
-        <Button.FontFamily>
-          <OnPlatform x:TypeArguments="x:String">
-            <OnPlatform.iOS>Helvetica-Light</OnPlatform.iOS>
-            <OnPlatform.Android>Roboto Slab</OnPlatform.Android>
-            <OnPlatform.WinPhone></OnPlatform.WinPhone>
-          </OnPlatform>
-        </Button.FontFamily>
       </Button>
-      <BoxView HeightRequest="1" Color="#999999" VerticalOptions="EndAndExpand" />
+      <BoxView VerticalOptions="EndAndExpand" />
     </StackLayout>
+    
   </Grid>
 </ContentPage>

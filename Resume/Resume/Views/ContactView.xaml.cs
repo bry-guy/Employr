@@ -22,7 +22,7 @@ namespace Resume.Views
                 LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
         }
 
-        public void HandleCodeSwitchPressed(object sender, EventArgs e)
+        public void HandleCodeViewButtonPressed(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CodeView());
         }

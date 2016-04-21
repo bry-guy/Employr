@@ -9,13 +9,13 @@ using Xamarin.Forms;
 using Resume.Views;
 
 //models
-//todo: setup website and make business cards
-//todo: enable zoom in webview
-//todo: hide strings away in files
-//todo: cleanup XAML and code files
+//todo: re-do resume and PDF
+//todo: refactor names
+//todo: setup .apk download
 //todo: finalize images (leave hosted on imgur? size differences?)
 //todo: finish android app
 //todo: test android app against wide range of devices
+//todo: setup .apk download
 //todo: prevent rotation on iOS
 //todo: tweak/fix for iOS
 //todo: test iOS app

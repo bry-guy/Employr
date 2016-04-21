@@ -40,21 +40,19 @@
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
     
-    <Image x:Name="ContactBackground" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_3.jpg" Aspect="AspectFill"/>
+    <Image Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_3.jpg" Aspect="AspectFill"/>
     
     <controls:CircleImage
       Grid.Row="1"
       Grid.RowSpan="2"
       Grid.Column="3"
       Grid.ColumnSpan="2"
-      x:Name="MenuImage"
       FillColor="#00BCD2"
       HorizontalOptions="EndAndExpand"/>
     
     <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Padding="20,0,20,0" Spacing="10">
       
       <BoxView />
-      
       <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding TwitterUri}" />
@@ -65,7 +63,6 @@
       </StackLayout>
       
       <BoxView />
-      
       <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding LinkedinUri}" />
@@ -76,7 +73,6 @@
       </StackLayout>
 
       <BoxView />
-
       <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding EmailUri}" />
@@ -87,7 +83,6 @@
       </StackLayout>
 
       <BoxView />
-
       <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding GithubUri}" />
@@ -98,7 +93,6 @@
       </StackLayout>
 
       <BoxView VerticalOptions="End" />
-      
     </StackLayout>
 
     <resume:ActionButton
@@ -106,11 +100,9 @@
         Grid.RowSpan="2"
         Grid.Column="3"
         Grid.ColumnSpan="2"
-        x:Name="_circleImage"
-        Clicked="HandleCodeSwitchPressed"
+        Clicked="HandleCodeViewButtonPressed"
         HorizontalOptions="Center"
         VerticalOptions="Center"/>
-
 
     <BoxView Grid.Row="3" Grid.ColumnSpan="6" VerticalOptions="End" />
   </Grid>

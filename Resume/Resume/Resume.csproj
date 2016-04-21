@@ -38,6 +38,7 @@
     <Compile Include="ActionButton.cs" />
     <Compile Include="AnimationUtilities.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="CustomWebView.cs" />
     <Compile Include="FlatButton.cs" />
     <Compile Include="IIntroAnimation.cs" />
@@ -60,6 +61,7 @@
       <DependentUpon>ResumeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ResumeViewModel.cs" />
+    <Compile Include="Views\ThicknessConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ImageCircle.Forms.Plugin.Abstractions, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">

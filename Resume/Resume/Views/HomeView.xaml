@@ -12,10 +12,17 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
       </Style>
+      <Style TargetType="BoxView">
+        <Setter Property="Color" Value="#999999" />
+        <Setter Property="HeightRequest" Value="1" />
+      </Style>
+      <Style TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="#A5A5A5" />
+      </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
   
-  <Grid x:Name="_grid" BackgroundColor="White" RowSpacing="0">
+  <Grid RowSpacing="0">
     <Grid.RowDefinitions>
       <RowDefinition Height="3*" />
       <RowDefinition Height="*" />
@@ -31,7 +38,12 @@
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
     
-    <Image x:Name="_backgroundImage" Grid.ColumnSpan="6" Grid.RowSpan="2" Source="evolve_1.jpg" Aspect="AspectFill" />
+    <Image 
+      x:Name="_backgroundImage" 
+      Grid.ColumnSpan="6" 
+      Grid.RowSpan="2" 
+      Source="evolve_1.jpg" 
+      Aspect="AspectFill" />
 
     <controls:CircleImage
       x:Name="_bryanImage"
@@ -43,12 +55,13 @@
       BorderThickness="2"
       HorizontalOptions="Center"
       VerticalOptions="Center"/>
-
-    <BoxView x:Name="_hiddenBoxView" Color="Transparent" Grid.ColumnSpan="6" Grid.RowSpan="3" />
     
-    <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled" >
-      <StackLayout x:Name="_descriptionStack" Spacing="0" BackgroundColor="#A5A5A5">
-        <Label x:Name="_descriptionLabel" Text="{Binding Description }" Margin ="15,0,15,10" />
+    <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled" Margin ="20,0,20,10" >
+      <StackLayout x:Name="_descriptionStack" Spacing="0" >
+        <Label x:Name="_introductionLabel" Text="{Binding Introduction }" Margin ="20,0,20,10" />
+        <Label x:Name="_bodyLabel" Text="{Binding Body }" Margin ="20,0,20,10" />
+        <Label x:Name="_bodyLabel2" Text="{Binding Body2 }" Margin ="20,0,20,10" />
+        <Label x:Name="_bodySignature" Text="{Binding Signature }" Margin ="20,0,20,10" />
       </StackLayout>
     </ScrollView>
       
@@ -57,20 +70,18 @@
       Grid.Row="2"
       Grid.RowSpan="2"
       Grid.ColumnSpan="6"
-      BackgroundColor="#A5A5A5"
       VerticalOptions="Start"
       Spacing="0"> 
-      <BoxView HeightRequest="1" Color="#999999" />
-      <Label x:Name="_nameLabel" Text="Bryan Smith" FontSize="36" VerticalOptions="CenterAndExpand" Margin="15,0,15,0" MinimumHeightRequest="0" >
-        <Label.FontFamily>
-          <OnPlatform x:TypeArguments="x:String">
-            <OnPlatform.iOS>Helvetica-Light</OnPlatform.iOS>
-            <OnPlatform.Android>Roboto Slab</OnPlatform.Android>
-            <OnPlatform.WinPhone></OnPlatform.WinPhone>
-          </OnPlatform>
-        </Label.FontFamily>
+      <BoxView />
+      <Label 
+        x:Name="_nameLabel" 
+        Text="Bryan Smith" 
+        FontSize="36" 
+        VerticalOptions="CenterAndExpand" 
+        Margin="20,0,20,0" 
+        MinimumHeightRequest="0" >
       </Label>
-      <BoxView HeightRequest="1" Color="#999999" VerticalOptions="End"/>
+      <BoxView VerticalOptions="End"/>
     </StackLayout>
       
     <resume:ActionButton
@@ -78,19 +89,18 @@
         Grid.RowSpan="2"
         Grid.Column="3"
         Grid.ColumnSpan="2"
-        x:Name="_circleImage"
-        Clicked="_circleImage_OnClicked"
+        x:Name="_codeViewFAB"
+        Clicked="HandleCodeViewButtonPressed"
         HorizontalOptions="Center"
         VerticalOptions="Center"/>
           
     <StackLayout
-      x:Name="_buttonStack"
       Grid.Row ="3" 
       Grid.ColumnSpan="6" 
       BackgroundColor="#BBA0A0A0" 
       VerticalOptions="End"
       Spacing="0"> 
-      <BoxView HeightRequest="1" Color="#999999" />
+      <BoxView />
       <Button 
           x:Name="_hireButton" 
           Text ="Hire me!"
@@ -102,15 +112,8 @@
           Command="{Binding HireButtonPressedCommand}" 
           TextColor="#F6F6F6"
           BackgroundColor="#00BCD2" >
-          <Button.FontFamily>
-            <OnPlatform x:TypeArguments="x:String">
-              <OnPlatform.iOS>Helvetica-Light</OnPlatform.iOS>
-              <OnPlatform.Android>Roboto Slab</OnPlatform.Android>
-              <OnPlatform.WinPhone></OnPlatform.WinPhone>
-            </OnPlatform>
-          </Button.FontFamily>
         </Button>
-      <BoxView HeightRequest="1" Color="#999999" VerticalOptions="EndAndExpand" />
+      <BoxView VerticalOptions="EndAndExpand" />
     </StackLayout>
   </Grid>
 

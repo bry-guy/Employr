@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Resume.Views;
 
 //models
+//todo: high-res code pics
 //todo: re-do resume and PDF
 //todo: refactor names
 //todo: setup .apk download

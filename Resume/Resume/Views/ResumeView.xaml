@@ -41,19 +41,13 @@
     
     <Image x:Name="_backgroundImage" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_2.jpg" Aspect="AspectFill"/>
     
-    <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled" IsClippedToBounds="False">
-      <StackLayout x:Name="_highlightsStack" Spacing="0">
-        <Label x:Name="HighlightsTitle1" Text="{Binding HighlightsTitle1}" FontSize="24" Margin="20,0,20,0" />
-        <Label x:Name="HighlightsBlurb1A" Text="{Binding HighlightsBlurb1A}" Margin="20,0,20,0"  />
-        <Label x:Name="HighlightsBlurb1B" Text="{Binding HighlightsBlurb1B}" Margin="20,0,20,0"  />
-        <Label x:Name="HighlightsBlurb1C" Text="{Binding HighlightsBlurb1C}" Margin="20,0,20,0"  />
-        <Label x:Name="HighlightsBlurb1D" Text="{Binding HighlightsBlurb1D}" Margin="20,0,20,0"  />
-        <BoxView VerticalOptions="Fill"/>
-        <Label x:Name="HighlightsTitle2" Text="{Binding HighlightsTitle2}" FontSize="24" Margin="20,0,20,0" />
-        <Label x:Name="HighlightsBlurb2A" Text="{Binding HighlightsBlurb2A}" Margin="20,0,20,0" />
-        <Label x:Name="HighlightsBlurb2B" Text="{Binding HighlightsBlurb2B}" Margin="20,0,20,0" />
-        <Label x:Name="HighlightsBlurb2C" Text="{Binding HighlightsBlurb2C}" Margin="20,0,20,0" />
-        <Label x:Name="HighlightsBlurb2D" Text="{Binding HighlightsBlurb2D}" Margin="20,0,20,0" />
+    <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled">
+      <StackLayout x:Name="_highlightsStack" Spacing="10" Padding="20,10,20,200">
+        <Label x:Name="HighlightsTitle1" Text="{Binding HighlightsTitle1}" FontSize="24" />
+        <Label x:Name="HighlightsBody1" Text="{Binding HighlightsBody1}"  />
+        <BoxView />
+        <Label x:Name="HighlightsTitle2" Text="{Binding HighlightsTitle2}" FontSize="24" />
+        <Label x:Name="HighlightsBody2" Text="{Binding HighlightsBody2}" />
       </StackLayout>
     </ScrollView>
 

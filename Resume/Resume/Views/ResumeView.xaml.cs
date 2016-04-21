@@ -24,13 +24,10 @@ namespace Resume.Views
 
             _highlightsStack.SetBinding(View.MarginProperty, new Binding("Height", source: _backgroundImage, converter: new ThicknessConverter(),
                 converterParameter: 1, mode: BindingMode.OneWay));
-            _highlightsStack.SetBinding(Xamarin.Forms.Layout.PaddingProperty, new Binding("Height", source: _backgroundImage, converter: new ThicknessConverter(),
-                converterParameter: 3, mode: BindingMode.OneWay));
 
             _nameStack.SetBinding(HeightRequestProperty, new Binding("Height", source: _resumeViewFAB));
 
-            AnimationUtilities.InitializeAppear(HighlightsTitle1, HighlightsBlurb1A, HighlightsBlurb1B, HighlightsBlurb1C, 
-                HighlightsBlurb1D,  HighlightsTitle2, HighlightsBlurb2A, HighlightsBlurb2B, HighlightsBlurb2C, HighlightsBlurb2D);
+            AnimationUtilities.InitializeAppear(HighlightsTitle1, HighlightsBody1,  HighlightsTitle2, HighlightsBody2);
         }
         //todo: math to stop scrolling
         public void OnScrolled(object sender, ScrolledEventArgs e)
@@ -87,8 +84,7 @@ namespace Resume.Views
         {
             if (!_appeared)
             {
-                AnimationUtilities.FeatherIn(HighlightsTitle1, HighlightsBlurb1A, HighlightsBlurb1B, HighlightsBlurb1C, 
-                    HighlightsBlurb1D, HighlightsTitle2, HighlightsBlurb2A, HighlightsBlurb2B, HighlightsBlurb2C, HighlightsBlurb2D);
+                AnimationUtilities.FeatherIn(HighlightsTitle1, HighlightsBody1, HighlightsTitle2, HighlightsBody2);
                 _appeared = true;
             }
         }

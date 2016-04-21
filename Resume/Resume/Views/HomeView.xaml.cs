@@ -24,7 +24,7 @@ namespace Resume.Views
             BindingContext = new HomeViewModel();
             InitializeComponent();
 
-            AnimationUtilities.InitializeAppear(_nameLabel, _introductionLabel, _bodyLabel, _hireButton);
+            AnimationUtilities.InitializeAppear(_nameLabel, _bodyLabel, _hireButton);
             AnimationUtilities.IniitializeRollIn(_bryanImage);
 
             _scrollView.SetBinding(View.MarginProperty, new Binding("Height", source: _nameStack, converter: new ThicknessConverter(),
@@ -32,8 +32,7 @@ namespace Resume.Views
 
             _descriptionStack.SetBinding(View.MarginProperty, new Binding("Height", source: _backgroundImage, converter: new ThicknessConverter(),
                 converterParameter: 1, mode: BindingMode.OneWay));
-            _descriptionStack.SetBinding(Xamarin.Forms.Layout.PaddingProperty, new Binding("Height", source: _backgroundImage, converter: new ThicknessConverter(),
-                converterParameter: 3, mode: BindingMode.OneWay));
+
             _nameStack.SetBinding(HeightRequestProperty, new Binding("Height", source: _codeViewFAB));
             
         }
@@ -99,7 +98,7 @@ namespace Resume.Views
         {
             if (!appeared)
             {
-                AnimationUtilities.FeatherIn(_nameLabel, _introductionLabel, _bodyLabel, _hireButton);
+                AnimationUtilities.FeatherIn(_nameLabel, _bodyLabel, _hireButton);
                 await Task.Delay(1000);
                 AnimationUtilities.RollIn(_bryanImage);
                 appeared = true;

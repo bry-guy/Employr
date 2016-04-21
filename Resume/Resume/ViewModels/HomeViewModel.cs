@@ -11,12 +11,9 @@ namespace Resume.ViewModels
 {
     public class HomeViewModel
     {
-        public string Introduction { get; set; } = Constants.HomeIntro;
-        public string Body { get; set; } = Constants.HomeBody1;
-        public string Body2 { get; set; } = Constants.HomeBody2;
-        public string Signature { get; set; } = Constants.HomeSignature;
-
+        public string Body { get; set; } = Constants.HomeBody;
         public string Title { get; set; } = "Mobile Developer";
+    
 
         public Command HireButtonPressedCommand { get; set; }
 

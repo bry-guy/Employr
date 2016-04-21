@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Resume.ViewModels;
@@ -18,8 +19,8 @@ namespace Resume.Views
             BindingContext = new ContactViewModel();
             InitializeComponent();
 
-            AnimationUtilities.InitializeAppear(TwitterWhiteLogo, TwitterText, 
-                LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
+            AnimationUtilities.InitializeAppear(_twitterWhiteLogo, _twitterText, 
+                _linkedinWhiteLogo, _linkedinText, _emailLogo, _emailText, _githubLogo, _githubText);
         }
 
         public void HandleCodeViewButtonPressed(object sender, EventArgs e)
@@ -31,8 +32,8 @@ namespace Resume.Views
         {
             if (!_appeared)
             {
-                AnimationUtilities.FeatherIn(TwitterWhiteLogo, TwitterText,
-                LinkedinWhiteLogo, LinkedinText, GmailLogo, GmailText, GithubLogo, GithubText);
+                AnimationUtilities.FeatherIn(_twitterWhiteLogo, _twitterText,
+                _linkedinWhiteLogo, _linkedinText, _emailLogo, _emailText, _githubLogo, _githubText);
                 _appeared = true;
             }
         }

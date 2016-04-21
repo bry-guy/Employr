@@ -8,16 +8,16 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Provider;
+using Android.Support.Graphics.Drawable;
 using ImageCircle.Forms.Plugin.Droid;
 using Resume;
 using Resume.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(FlatButton), typeof(ButtonRenderer))]
 [assembly: ExportRenderer(typeof(ActionButton), typeof(ActionButtonRenderer))]
 [assembly: ExportRenderer(typeof(Xamarin.Forms.ScrollView), typeof(MyScrollViewRenderer))]
-[assembly: ExportRenderer(typeof(Xamarin.Forms.Label), typeof(MyLabelRenderer))]
+[assembly: ExportRenderer(typeof(Label), typeof(MyLabelRenderer))]
 [assembly: ExportRenderer(typeof(CustomWebView), typeof(CustomWebViewRenderer))]
 [assembly: ResolutionGroupName("Employr")]
 
@@ -30,6 +30,8 @@ namespace Resume.Droid
         {
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
+
+            var t = typeof (VectorDrawableCompat);
 
             base.OnCreate(bundle);
             Forms.Init(this, bundle);

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resume.Droid", "Resume\Resume.Droid\Resume.Droid.csproj", "{9CB21C43-B9EB-4D8F-BA48-76853DD5AD78}"
 EndProject
@@ -140,6 +140,7 @@ Global
 		{846E2026-480F-4EB1-839D-7CC907778383}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{846E2026-480F-4EB1-839D-7CC907778383}.Debug|x64.ActiveCfg = Debug|iPhone
 		{846E2026-480F-4EB1-839D-7CC907778383}.Debug|x86.ActiveCfg = Debug|iPhone
+		{846E2026-480F-4EB1-839D-7CC907778383}.Debug|x86.Build.0 = Debug|iPhone
 		{846E2026-480F-4EB1-839D-7CC907778383}.Release|Any CPU.ActiveCfg = Release|iPhone
 		{846E2026-480F-4EB1-839D-7CC907778383}.Release|ARM.ActiveCfg = Release|iPhone
 		{846E2026-480F-4EB1-839D-7CC907778383}.Release|iPhone.ActiveCfg = Release|iPhone
@@ -198,8 +199,6 @@ Global
 		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Debug|x64.Build.0 = Debug|Any CPU
 		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Debug|x64.Deploy.0 = Debug|Any CPU
 		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Debug|x86.ActiveCfg = Debug|x86
-		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Debug|x86.Build.0 = Debug|x86
-		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Debug|x86.Deploy.0 = Debug|x86
 		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0C45C76B-5517-49B4-B284-E8A76D9DA235}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -328,8 +327,6 @@ Global
 		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Debug|x64.Build.0 = Debug|x64
 		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Debug|x64.Deploy.0 = Debug|x64
 		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Debug|x86.ActiveCfg = Debug|x86
-		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Debug|x86.Build.0 = Debug|x86
-		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Debug|x86.Deploy.0 = Debug|x86
 		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54E6A5E6-EE83-4166-8DF4-2FC1DCFDDB25}.Release|Any CPU.Deploy.0 = Release|Any CPU

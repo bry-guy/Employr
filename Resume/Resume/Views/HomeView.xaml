@@ -56,12 +56,13 @@
       HorizontalOptions="Center"
       VerticalOptions="Center"/>
     
-    <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled" Margin ="20,0,20,10" >
-      <StackLayout x:Name="_descriptionStack" Spacing="0" >
-        <Label x:Name="_introductionLabel" Text="{Binding Introduction }" Margin ="20,0,20,10" />
-        <Label x:Name="_bodyLabel" Text="{Binding Body }" Margin ="20,0,20,10" />
-        <Label x:Name="_bodyLabel2" Text="{Binding Body2 }" Margin ="20,0,20,10" />
-        <Label x:Name="_bodySignature" Text="{Binding Signature }" Margin ="20,0,20,10" />
+    <ScrollView 
+      x:Name="_scrollView" 
+      Grid.RowSpan="4" 
+      Grid.ColumnSpan="6" 
+      Scrolled="OnScrolled" >
+      <StackLayout x:Name="_descriptionStack" Spacing="0" Padding="20,10,20,200">
+        <Label x:Name="_bodyLabel" Text="{Binding Body}" />
       </StackLayout>
     </ScrollView>
       

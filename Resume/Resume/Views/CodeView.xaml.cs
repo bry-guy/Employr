@@ -14,7 +14,9 @@ namespace Resume.Views
         {
             InitializeComponent();
             HtmlWebViewSource htmlSource = new HtmlWebViewSource();
-            htmlSource.Html = @"<html>  <body style='padding:0; margin:0;'> <img src='http://i.imgur.com/Bk2z4UB.jpg' width='100%' style='padding:0; margin:0;'/> </body> </html>";
+            htmlSource.Html = @"<html>  <body style='padding:0; margin:0;'> <img src='http://i.imgur.com/Bk2z4UB.jpg' width='100%' 
+                    style='padding:0; margin:0;'/> content='width = device - width, initial - scale = .5, maximum - scale = 12.0, minimum - scale = .25, user - scalable = yes'/> 
+                    </body> </html>";
             _sourceCodeWebsite.Source = htmlSource;
         }
     }

@@ -11,12 +11,12 @@ namespace Resume.ViewModels
 {
     public class ContactViewModel
     {
-        private ICommand TapCommand { get; set; }
+        public ICommand TapCommand { get; set; }
 
-        private Uri TwitterUri { get; set; }
-        private Uri LinkedinUri { get; set; }
-        private Uri EmailUri { get; set; }
-        private Uri GithubUri { get; set; }
+        public Uri TwitterUri { get; set; }
+        public Uri LinkedinUri { get; set; }
+        public Uri EmailUri { get; set; }
+        public Uri GithubUri { get; set; }
            
         public ContactViewModel()
         {

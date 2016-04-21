@@ -39,57 +39,46 @@
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
-    
-    <Image Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_3.jpg" Aspect="AspectFill"/>
-    
-    <controls:CircleImage
-      Grid.Row="1"
-      Grid.RowSpan="2"
-      Grid.Column="3"
-      Grid.ColumnSpan="2"
-      FillColor="#00BCD2"
-      HorizontalOptions="EndAndExpand"/>
+
+    <Image Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_3.jpg" Aspect="AspectFill">
+    </Image>
     
     <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Padding="20,0,20,0" Spacing="10">
       
       <BoxView />
-      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout x:Name="_twitterStack" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding TwitterUri}" />
         </StackLayout.GestureRecognizers>
-        <Image  x:Name="TwitterWhiteLogo" Source="twitter_white.png" StyleClass="Icon">
-        </Image>
-        <Label x:Name="TwitterText" Text="@BJSmith91" HorizontalOptions="Start" />
+        <Image  x:Name="_twitterWhiteLogo" Source="twitter_white.png" StyleClass="Icon" />
+        <Label x:Name="_twitterText" Text="@BJSmith91" HorizontalOptions="Start" />
       </StackLayout>
       
       <BoxView />
-      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout x:Name="_linkedinStack" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding LinkedinUri}" />
         </StackLayout.GestureRecognizers>
-        <Image  x:Name="LinkedinWhiteLogo" Source="linkedin_white.png" StyleClass="Icon">
-        </Image>
-        <Label x:Name="LinkedinText" Text="Connect on LinkedIn" />
+        <Image  x:Name="_linkedinWhiteLogo" Source="linkedin_white.png" StyleClass="Icon" />
+        <Label x:Name="_linkedinText" Text="Connect on LinkedIn" />
       </StackLayout>
 
       <BoxView />
-      <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout x:Name="_emailStack" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding EmailUri}" />
         </StackLayout.GestureRecognizers>
-        <Image  x:Name="GmailLogo" Source="email.png" StyleClass="Icon">
-        </Image>
-        <Label x:Name="GmailText" Text="BryanJ.Smith91@gmail.com" />
+        <Image  x:Name="_emailLogo" Source="email.png" StyleClass="Icon" />
+        <Label x:Name="_emailText" Text="BryanJ.Smith91@gmail.com" />
       </StackLayout>
 
       <BoxView />
-      <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout x:Name="_githubStack" Orientation="Horizontal" VerticalOptions="End" Spacing="20" MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding GithubUri}" />
         </StackLayout.GestureRecognizers>
-        <Image  x:Name="GithubLogo" Source="github_white.png" StyleClass="Icon">
-        </Image>
-        <Label x:Name="GithubText" Text="github.com/bryansmi" />
+        <Image  x:Name="_githubLogo" Source="github_white.png" StyleClass="Icon" />
+        <Label x:Name="_githubText" Text="github.com/bryansmi" />
       </StackLayout>
 
       <BoxView VerticalOptions="End" />

@@ -42,12 +42,13 @@
     <Image x:Name="_backgroundImage" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_2.jpg" Aspect="AspectFill"/>
     
     <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled">
-      <StackLayout x:Name="_highlightsStack" Spacing="10" Padding="20,10,20,200">
+      <StackLayout x:Name="_highlightsStack" Spacing="10" Padding="20,0,20,100">
         <Label x:Name="HighlightsTitle1" Text="{Binding HighlightsTitle1}" FontSize="24" />
         <Label x:Name="HighlightsBody1" Text="{Binding HighlightsBody1}"  />
         <BoxView />
         <Label x:Name="HighlightsTitle2" Text="{Binding HighlightsTitle2}" FontSize="24" />
         <Label x:Name="HighlightsBody2" Text="{Binding HighlightsBody2}" />
+        <BoxView x:Name="_hiddenBoxView" Color="Transparent" VerticalOptions="FillAndExpand"/>
       </StackLayout>
     </ScrollView>
 

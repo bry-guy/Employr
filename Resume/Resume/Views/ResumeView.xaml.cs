@@ -24,6 +24,8 @@ namespace Resume.Views
 
             _highlightsStack.SetBinding(View.MarginProperty, new Binding("Height", source: _backgroundImage, converter: new ThicknessConverter(),
                 converterParameter: 1, mode: BindingMode.OneWay));
+            //_highlightsStack.SetBinding(StackLayout.PaddingProperty, new Binding("Height", source: _buttonStack, converter: new ThicknessConverter(),
+            //    converterParameter: 3, mode: BindingMode.OneWay));
 
             _nameStack.SetBinding(HeightRequestProperty, new Binding("Height", source: _resumeViewFAB));
 

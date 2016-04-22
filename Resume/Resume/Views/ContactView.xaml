@@ -43,7 +43,7 @@
     <Image Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_3.jpg" Aspect="AspectFill">
     </Image>
     
-    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" Padding="20,0,20,0" Spacing="10">
+    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="20,0,20,0" Spacing="10">
       
       <BoxView />
       <StackLayout x:Name="_twitterStack" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >

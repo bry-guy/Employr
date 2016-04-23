@@ -2593,11 +2593,17 @@ namespace Resume.Droid
 			// aapt resource value: 0x7f0200d3
 			public const int mr_ic_play_light = 2130837715;
 			
-			// aapt resource value: 0x7f0200d5
-			public const int notification_template_icon_bg = 2130837717;
+			// aapt resource value: 0x7f0200d7
+			public const int notification_template_icon_bg = 2130837719;
 			
 			// aapt resource value: 0x7f0200d4
-			public const int twitter_white = 2130837716;
+			public const int splash = 2130837716;
+			
+			// aapt resource value: 0x7f0200d5
+			public const int SplashScreen = 2130837717;
+			
+			// aapt resource value: 0x7f0200d6
+			public const int twitter_white = 2130837718;
 			
 			static Drawable()
 			{
@@ -4078,11 +4084,11 @@ namespace Resume.Droid
 			// aapt resource value: 0x7f0b0025
 			public const int CardView_Light = 2131427365;
 			
-			// aapt resource value: 0x7f0b017d
-			public const int MyTheme = 2131427709;
-			
 			// aapt resource value: 0x7f0b017e
-			public const int MyTheme_Base = 2131427710;
+			public const int MyTheme = 2131427710;
+			
+			// aapt resource value: 0x7f0b017f
+			public const int MyTheme_Base = 2131427711;
 			
 			// aapt resource value: 0x7f0b003d
 			public const int Platform_AppCompat = 2131427389;
@@ -4458,6 +4464,9 @@ namespace Resume.Droid
 			
 			// aapt resource value: 0x7f0b000e
 			public const int Theme_MediaRouter_LightControlPanel = 2131427342;
+			
+			// aapt resource value: 0x7f0b017d
+			public const int Theme_Splash = 2131427709;
 			
 			// aapt resource value: 0x7f0b0119
 			public const int ThemeOverlay_AppCompat = 2131427609;

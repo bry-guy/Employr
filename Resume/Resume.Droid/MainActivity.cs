@@ -23,15 +23,14 @@ using Xamarin.Forms.Platform.Android;
 
 namespace Resume.Droid
 {
-    [Activity(Label = "Resume", HardwareAccelerated = true, Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Employr", HardwareAccelerated = true, ConfigurationChanges = ConfigChanges.ScreenSize 
+        | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
-
-            var t = typeof (VectorDrawableCompat);
 
             base.OnCreate(bundle);
             Forms.Init(this, bundle);

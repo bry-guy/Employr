@@ -31,9 +31,13 @@ namespace Resume
             "Bryan"
             ;
 
+        public const string Credits = "\n\nCredits\n\n" +
+            "Icon made by Freepik 'http://www.freepik.com' from FlatIcon" +
+            " 'http://www.flaticon.com' and is licensed Creative Commons 3.0";
+
         public const string HireButtonEmailBody  =
-            "Bryan,\r\n + " +
-            "We enjoyed speaking with you at Xamarin Evolve 2016, and there are opportunities in our future we'd like to discuss with you. We hope to hear back from you! Thanks,/n/n"
+            "Bryan,\r\n" +
+            "We enjoyed speaking with you at Xamarin Evolve 2016, and there are opportunities in our future we'd like to discuss with you. We hope to hear back from you! Thanks,\n\n"
             ;
 
         //ResumeView

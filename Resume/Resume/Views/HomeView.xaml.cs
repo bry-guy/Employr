@@ -91,7 +91,7 @@ namespace Resume.Views
 
         private void HandleCodeViewButtonPressed(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CodeView());
+            Navigation.PushAsync(new CodeView(new Uri("http://i.imgur.com/wtZe43j.png")));
         }
         
         public async void RunIntroAnimations()

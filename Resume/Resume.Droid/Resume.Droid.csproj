@@ -58,6 +58,20 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidLinkSkip>--linkskip=alarm</AndroidLinkSkip>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis />
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
+    <DebugSymbols>False</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -166,6 +180,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\paperResume.pdf" />
@@ -469,6 +484,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Resume\Resume.csproj">
       <Name>Resume</Name>
+      <Project>{085EEB6A-801E-4BCE-8F2C-5711FB186E3D}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -844,6 +860,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Images\code.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\SplashScreen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

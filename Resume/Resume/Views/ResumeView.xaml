@@ -39,10 +39,15 @@
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
     
-    <Image x:Name="_backgroundImage" Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_2.jpg" Aspect="AspectFill"/>
+    <Image 
+      x:Name="_backgroundImage" 
+      Grid.RowSpan="2" 
+      Grid.ColumnSpan="6" 
+      Source="evolve_2.jpg" 
+      Aspect="AspectFill"/>
     
     <ScrollView x:Name="_scrollView" Grid.RowSpan="4" Grid.ColumnSpan="6" Scrolled="OnScrolled">
-      <StackLayout x:Name="_highlightsStack" Spacing="10" Padding="20,0,20,100">
+      <StackLayout x:Name="_highlightsStack" Spacing="10" Padding="20,0,20,150">
         <Label x:Name="HighlightsTitle1" Text="{Binding HighlightsTitle1}" FontSize="24" />
         <Label x:Name="HighlightsBody1" Text="{Binding HighlightsBody1}"  />
         <BoxView />
@@ -76,7 +81,7 @@
         Grid.Row="1"
         Grid.RowSpan="2"
         Grid.Column="3"
-        Grid.ColumnSpan="2"
+        Grid.ColumnSpan="3"
         Clicked="HandleCodeViewButtonPressed"
         HorizontalOptions="Center"
         VerticalOptions="Center"/>

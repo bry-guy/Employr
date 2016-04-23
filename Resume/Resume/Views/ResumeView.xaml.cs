@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Resume.ViewModels;
@@ -79,7 +80,7 @@ namespace Resume.Views
 
         public void HandleCodeViewButtonPressed(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CodeView());
+            Navigation.PushAsync(new CodeView(new Uri("http://i.imgur.com/dEuxzcH.png")));
         }
 
         public void RunIntroAnimations()

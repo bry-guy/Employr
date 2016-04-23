@@ -100,6 +100,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Resume\Resume.csproj">
       <Name>Resume</Name>
+      <Project>{085EEB6A-801E-4BCE-8F2C-5711FB186E3D}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

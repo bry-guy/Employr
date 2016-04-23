@@ -8,18 +8,16 @@ using System.Text;
 using Xamarin.Forms;
 using Resume.Views;
 
-//models
-//todo: high-res code pics
-//todo: re-do resume and PDF
+//todo: setup .apk download
+//todo: add splash screen
+
+//post-evolve
 //todo: refactor names
-//todo: setup .apk download
-//todo: finalize images (leave hosted on imgur? size differences?)
-//todo: finish android app
-//todo: test android app against wide range of devices
-//todo: setup .apk download
-//todo: prevent rotation on iOS
-//todo: tweak/fix for iOS
-//todo: test iOS app
+//todo: iOS compat
+//todo: proper tablet support
+//todo: zoomable code images
+//todo: built-in entry/twitter feed (or something like a facebook wall?)
+//todo: add top-level master-detail menu w/ bodies of work
 
 namespace Resume
 {

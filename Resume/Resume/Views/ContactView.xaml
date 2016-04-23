@@ -43,10 +43,22 @@
     <Image Grid.RowSpan="2" Grid.ColumnSpan="6" Source="evolve_3.jpg" Aspect="AspectFill">
     </Image>
     
-    <StackLayout Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="20,0,20,0" Spacing="10">
+    <StackLayout 
+      Grid.Row="2" 
+      Grid.RowSpan="2" 
+      Grid.ColumnSpan="6" 
+      HorizontalOptions="CenterAndExpand" 
+      VerticalOptions="CenterAndExpand" 
+      Padding="20,0,20,0" 
+      Spacing="10">
       
       <BoxView />
-      <StackLayout x:Name="_twitterStack" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout 
+        x:Name="_twitterStack" 
+        Orientation="Horizontal" 
+        VerticalOptions="Start" 
+        Spacing="20" 
+        MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding TwitterUri}" />
         </StackLayout.GestureRecognizers>
@@ -55,7 +67,12 @@
       </StackLayout>
       
       <BoxView />
-      <StackLayout x:Name="_linkedinStack" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout 
+        x:Name="_linkedinStack" 
+        Orientation="Horizontal" 
+        VerticalOptions="Start" 
+        Spacing="20" 
+        MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding LinkedinUri}" />
         </StackLayout.GestureRecognizers>
@@ -64,7 +81,12 @@
       </StackLayout>
 
       <BoxView />
-      <StackLayout x:Name="_emailStack" Orientation="Horizontal" VerticalOptions="Start" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout 
+        x:Name="_emailStack" 
+        Orientation="Horizontal" 
+        VerticalOptions="Start" 
+        Spacing="20" 
+        MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding EmailUri}" />
         </StackLayout.GestureRecognizers>
@@ -73,7 +95,12 @@
       </StackLayout>
 
       <BoxView />
-      <StackLayout x:Name="_githubStack" Orientation="Horizontal" VerticalOptions="End" Spacing="20" MinimumHeightRequest="0" >
+      <StackLayout 
+        x:Name="_githubStack" 
+        Orientation="Horizontal" 
+        VerticalOptions="End" 
+        Spacing="20" 
+        MinimumHeightRequest="0" >
         <StackLayout.GestureRecognizers>
           <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding GithubUri}" />
         </StackLayout.GestureRecognizers>
@@ -88,7 +115,7 @@
         Grid.Row="1"
         Grid.RowSpan="2"
         Grid.Column="3"
-        Grid.ColumnSpan="2"
+        Grid.ColumnSpan="3"
         Clicked="HandleCodeViewButtonPressed"
         HorizontalOptions="Center"
         VerticalOptions="Center"/>

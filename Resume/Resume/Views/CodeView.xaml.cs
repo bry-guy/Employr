@@ -10,13 +10,20 @@ namespace Resume.Views
 {
     public partial class CodeView : ContentPage
     {
-        public CodeView()
+        private Uri uri;
+        public CodeView(Uri uri)
         {
+            this.uri = uri;
             InitializeComponent();
+
+            
             HtmlWebViewSource htmlSource = new HtmlWebViewSource();
-            htmlSource.Html = @"<html>  <body style='padding:0; margin:0;'> <img src='http://i.imgur.com/Bk2z4UB.jpg' width='100%' 
-                    style='padding:0; margin:0;'/> content='width = device - width, initial - scale = .5, maximum - scale = 12.0, minimum - scale = .25, user - scalable = yes'/> 
-                    </body> </html>";
+            htmlSource.Html = String.Format("<html> <head> " +
+                                            "<meta name='viewport'; content='width=device-width; initial-scale=0.5; user-scalable=yes;' /> </head>" +
+                                            "<title></title> " +
+                                            "<body style='padding:0; margin:0;'> "+
+                                            "<img src='{0}' width='100%' style='padding:0; margin:0; '/> " + 
+                                            "</body> </html>", uri);
             _sourceCodeWebsite.Source = htmlSource;
         }
     }

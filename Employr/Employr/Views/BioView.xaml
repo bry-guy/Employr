@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:employr="clr-namespace:Employr;assembly=Employr"
+             x:Class="Employr.Views.BioView"
+             Title ="Biography">
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="#F6F6F6" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+      </Style>
+      <Style TargetType="BoxView">
+        <Setter Property="Color" Value="#999999" />
+        <Setter Property="HeightRequest" Value="1" />
+      </Style>
+      <Style TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="#A5A5A5" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <Grid RowSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="5*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="6*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    
+    <Image 
+      x:Name="_backgroundImage" 
+      Grid.ColumnSpan="6" 
+      Grid.RowSpan="2" 
+      Source="evolve_1.jpg" 
+      Aspect="AspectFill" />
+
+    <controls:CircleImage
+      x:Name="_bryanImage"
+      Grid.ColumnSpan="6"
+      Grid.RowSpan="2"
+      Margin="15,0,15,5"
+      Source="bryan"
+      BorderColor="#00BCD2"
+      BorderThickness="2"
+      HorizontalOptions="Center"
+      VerticalOptions="Center"/>
+    
+    <ScrollView 
+      x:Name="_scrollView" 
+      Grid.RowSpan="4" 
+      Grid.ColumnSpan="6" 
+      Scrolled="OnScrolled" >
+      <StackLayout x:Name="_descriptionStack" Spacing="0" Padding="20,10,20,150">
+        <Label x:Name="_bodyLabel" Text="{Binding Body}" />
+        <Label Text="{Binding Credits}" FontSize="12" />
+        <BoxView x:Name="_hiddenBoxView" Color="Transparent" VerticalOptions="FillAndExpand"/>
+      </StackLayout>
+    </ScrollView>
+      
+    <StackLayout
+      x:Name="_nameStack"
+      Grid.Row="2"
+      Grid.RowSpan="2"
+      Grid.ColumnSpan="6"
+      VerticalOptions="Start"
+      Spacing="0"> 
+      <BoxView />
+      <Label 
+        x:Name="_nameLabel" 
+        Text="Bryan Smith" 
+        FontSize="36" 
+        VerticalOptions="CenterAndExpand" 
+        Margin="20,0,20,0" 
+        MinimumHeightRequest="0" >
+      </Label>
+      <BoxView VerticalOptions="End"/>
+    </StackLayout>
+      
+    <employr:ActionButton
+        Grid.Row="1"
+        Grid.RowSpan="2"
+        Grid.Column="3"
+        Grid.ColumnSpan="3"
+        x:Name="_codeViewFAB"
+        Clicked="HandleCodeViewButtonPressed"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+          
+    <StackLayout
+      Grid.Row ="3" 
+      Grid.ColumnSpan="6" 
+      BackgroundColor="#BBA0A0A0" 
+      VerticalOptions="End"
+      Spacing="0"> 
+      <BoxView />
+      <Button 
+          x:Name="_hireButton" 
+          Text ="Hire me!"
+          Font="Bold"
+          FontSize="14"
+          Margin ="60, 10, 60, 10"
+          VerticalOptions="End"
+          HorizontalOptions="Fill"
+          Command="{Binding HireButtonPressedCommand}" 
+          TextColor="#F6F6F6"
+          BackgroundColor="#00BCD2" >
+        </Button>
+      <BoxView VerticalOptions="EndAndExpand" />
+    </StackLayout>
+  </Grid>
+
+</ContentPage>
